@@ -1,2 +1,2 @@
 # whitchway
-Best-effort, bounded runtime probe that records system and application state to JSONL.
+One-shot, observe-only probe that records real system and app state without mutation.
