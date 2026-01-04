@@ -1,2 +1,2 @@
 # whitchway
-One-shot, observe-only probe that records real system and app state without mutation.
+Observe-only runtime probe for capturing factual system and application state.
