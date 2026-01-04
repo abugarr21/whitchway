@@ -1,6 +1,7 @@
-# whitchway
+ whitchway
 Observe-only runtime probe for capturing factual system and application state.
 this is the command I specifically use for running Whitchway scans. I run the tooling from a flash drive and write results to an adjacent folder with indicators.
+
 sudo bash -lc '
 set -euo pipefail
 
@@ -21,11 +22,9 @@ cd "$OUTDIR"
 PROBE="${BASE}/whitchway_probe.py"
 WHITCH="${BASE}/section8_4_whitchway.py"
 
-# If hbai exists on this host, route capture is a nice demo.
 APP_SPEC="hbai.app.main:app"
 ROOT="/opt/hbai"
 
-# Probe: captures factual state surfaces (system + optional app routes)
 if [[ -d "$ROOT" ]]; then
   export PYTHONPATH="$ROOT"
   python3 "$PROBE" --root "$ROOT" --app "$APP_SPEC" --out "whitchway_probe.jsonl" |& tee probe_console.txt || true
